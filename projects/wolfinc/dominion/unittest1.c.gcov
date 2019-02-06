@@ -1,0 +1,51 @@
+        -:    0:Source:unittest1.c
+        -:    0:Graph:unittest1.gcno
+        -:    0:Data:unittest1.gcda
+        -:    0:Runs:3
+        -:    0:Programs:1
+        -:    1:/* -----------------------------------------------------------------------
+        -:    2: * UnitTest1
+        -:    3: * whoseturn()
+        -:    4: * -----------------------------------------------------------------------
+        -:    5: */
+        -:    6:
+        -:    7:#include "dominion.h"
+        -:    8:#include "dominion_helpers.h"
+        -:    9:#include <string.h>
+        -:   10:#include <stdio.h>
+        -:   11:#include <assert.h>
+        -:   12:#include "rngs.h"
+        -:   13:
+        -:   14:// set NOISY_TEST to 0 to remove printfs from output
+        -:   15:#define NOISY_TEST 1
+function main called 3 returned 100% blocks executed 92%
+        3:   16:int main() {
+        3:   17:    int seed = 1000;
+        3:   18:    int numPlayer = 2;
+        3:   19:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   20:               , remodel, smithy, village, baron, great_hall};
+        -:   21:    struct gameState G;
+        3:   22:		struct gameState *G_ptr = &G;
+        3:   23:	printf("Test: whoseturn()\n");
+call    0 returned 100%
+        -:   24:    // Test 'whoseturn()' function 4 individual times
+        9:   25:    for(int i = 0; i < numPlayer; i++)
+branch  0 taken 67%
+branch  1 taken 33% (fallthrough)
+        -:   26:    {                
+        6:   27:        memset(&G, 23, sizeof(struct gameState));   // clear the game state
+        6:   28:        initializeGame(numPlayer, k, seed, G_ptr);
+call    0 returned 100%
+        6:   29:        int turn1 = whoseTurn(G_ptr);
+call    0 returned 100%
+        6:   30:        int turn2 = G.whoseTurn;
+        6:   31:        printf("turn = %i\nG.whoseturn() = %i\n", (int)turn1, (int)turn2);
+call    0 returned 100%
+        6:   32:        assert(turn1 == turn2);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        -:   33:    }
+        3:   34:		printf("TEST PASSED\n");
+call    0 returned 100%
+        -:   35:}

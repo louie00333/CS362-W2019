@@ -1,0 +1,150 @@
+Test: whoseturn()
+turn = 0
+G.whoseturn() = 0
+turn = 0
+G.whoseturn() = 0
+TEST PASSED
+File 'unittest1.c'
+Lines executed:100.00% of 14
+Branches executed:100.00% of 4
+Taken at least once:75.00% of 4
+Calls executed:83.33% of 6
+Creating 'unittest1.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+handCards = 0
+Current handCount = 0
+Current Game handCount = 0
+numHandCards() == Passed!
+File 'unittest2.c'
+Lines executed:100.00% of 15
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:88.89% of 9
+Creating 'unittest2.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+TEST1.1 PASS
+TEST1.2 PASS
+TEST2.1 PASS
+TEST2.2 PASS
+TEST2.3 PASS
+All Tests Passed!
+File 'unittest3.c'
+Lines executed:100.00% of 36
+Branches executed:100.00% of 12
+Taken at least once:58.33% of 12
+Calls executed:76.19% of 21
+Creating 'unittest3.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+Testing toFlag
+Test without supp: PASS
+Deck addition: PASS
+Hand addition: PASS
+All tests Passed!
+File 'unittest4.c'
+Lines executed:100.00% of 31
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:80.00% of 15
+Creating 'unittest4.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+----------------TESTING CARD: SMITHY---------------
+hand count = 8, expected = 7
+deck count = 2, expected = 2
+TEST - 'SMITHY' PASSED
+File 'cardtest1.c'
+Lines executed:100.00% of 16
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:85.71% of 7
+Creating 'cardtest1.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+----------------TESTING CARD: GREAT_HALL---------------
+hand count = 5, expected = 5
+deck count = 4, expected = 4
+Action count = 2, expected = 2
+TEST - 'GREAT_HALL' PASSEDFile 'cardtest2.c'
+Lines executed:100.00% of 19
+Branches executed:100.00% of 6
+Taken at least once:50.00% of 6
+Calls executed:70.00% of 10
+Creating 'cardtest2.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+----------------TESTING CARD: ADVENTURER---------------
+deck count = 0, expected = 5
+Player hand count = -72, expected = 5
+TEST - 'ADVENTURER' PASSEDFile 'cardtest3.c'
+Lines executed:100.00% of 28
+No branches
+Calls executed:100.00% of 8
+Creating 'cardtest3.c.gcov'
+
+File '<built-in>'
+No executable lines
+No branches
+No calls
+Removing '<built-in>.gcov'
+
+----------------- Testing Card: steward ----------------
+TEST 1: choice1 = 1 = +2 cards
+hand count = 6, expected = 6
+deck count = 3, expected = 3
+coins = 4, expected = 4
+TEST 2: choice1 = 2 = +2 coins
+hand count = 4, expected = 4
+deck count = 5, expected = 5
+coins = 6, expected = 6
+TEST 3: choice1 = 3 = trash two cards
+starting cards: (18)(4)(2)(1)(9); removed: (4)(2); ending cards: (9)(1), expected: (1)(9)
+hand count = 2, expected = 2
+deck count = 5, expected = 5
+starting cards: (18)(4)(2)(1)(9); removed: (4)(1); ending cards: (2)(9), expected: (2)(9)
+starting cards: (18)(4)(2)(1)(9); removed: (4)(9); ending cards: (2)(1), expected: (2)(1)
+starting cards: (18)(4)(2)(1)(9); removed: (2)(1); ending cards: (9)(4), expected: (4)(9)
+starting cards: (18)(4)(2)(1)(9); removed: (2)(9); ending cards: (1)(4), expected: (4)(1)
+starting cards: (18)(4)(2)(1)(9); removed: (1)(9); ending cards: (2)(4), expected: (4)(2)
+
+ >>>>> SUCCESS: Testing complete steward <<<<<
+
+File 'cardtest4.c'
+Lines executed:100.00% of 76
+Branches executed:100.00% of 38
+Taken at least once:73.68% of 38
+Calls executed:72.22% of 36
+Creating 'cardtest4.c.gcov'
+

@@ -1,0 +1,72 @@
+        -:    0:Source:cardtest2.c
+        -:    0:Graph:cardtest2.gcno
+        -:    0:Data:cardtest2.gcda
+        -:    0:Runs:3
+        -:    0:Programs:1
+        -:    1:/*
+        -:    2: * cardtest2.c
+        -:    3: *
+        -:    4: 
+        -:    5: */
+        -:    6:
+        -:    7:/*
+        -:    8: * Include the following lines in your makefile:
+        -:    9: *
+        -:   10: * cardtest2: cardtest2.c dominion.o rngs.o
+        -:   11: *      gcc -o cardtest2 -g  cardtest2.c dominion.o rngs.o $(CFLAGS)
+        -:   12: */
+        -:   13:
+        -:   14:
+        -:   15:#include "dominion.h"
+        -:   16:#include "dominion_helpers.h"
+        -:   17:#include <string.h>
+        -:   18:#include <stdio.h>
+        -:   19:#include <assert.h>
+        -:   20:#include "rngs.h"
+        -:   21:#include <stdlib.h>
+        -:   22:
+function main called 3 returned 100% blocks executed 80%
+        3:   23:int main() {
+        3:   24:    int seed = 1000;
+        3:   25:    int handpos = 0, choice1 = 0, choice2 = 0, choice3 = 0, bonus = 0;
+        3:   26:    int numPlayer = 2;
+        3:   27:    int thisPlayer = 0;
+        3:   28:    int k[10] = {adventurer, council_room, feast, gardens, mine
+        -:   29:               , remodel, smithy, village, baron, great_hall};
+        -:   30:    struct gameState G, Gtest;
+        3:   31:    struct gameState *G_ptr = &G;
+        3:   32:    struct gameState *Gtest_ptr = &Gtest;
+        3:   33:    initializeGame(numPlayer, k, seed, G_ptr);
+call    0 returned 100%
+        -:   34:
+        -:   35:    // Test: 'GREAT_HALL' card
+        3:   36:    printf("----------------TESTING CARD: GREAT_HALL---------------\n");
+call    0 returned 100%
+        -:   37:
+        -:   38:    // Test 1
+        3:   39:    memcpy(Gtest_ptr, G_ptr, sizeof(struct gameState));
+        3:   40:    cardEffect(great_hall, choice1, choice2, choice3, Gtest_ptr, handpos, &bonus);
+call    0 returned 100%
+        -:   41:
+        3:   42:    printf("hand count = %d, expected = %d\n", Gtest.handCount[thisPlayer], G.handCount[thisPlayer]);
+call    0 returned 100%
+        3:   43:	printf("deck count = %d, expected = %d\n", Gtest.deckCount[thisPlayer], G.deckCount[thisPlayer] - 1);
+call    0 returned 100%
+        3:   44:    printf("Action count = %d, expected = %d\n", Gtest.numActions, G.numActions+1);
+call    0 returned 100%
+        -:   45:
+        3:   46:	assert(Gtest.handCount[thisPlayer] == G.handCount[thisPlayer]);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        3:   47:	assert(Gtest.deckCount[thisPlayer] == G.deckCount[thisPlayer] - 1);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        3:   48:    assert(Gtest.numActions == G.numActions+1);
+branch  0 taken 0% (fallthrough)
+branch  1 taken 100%
+call    2 never executed
+        3:   49:    printf("TEST - \'GREAT_HALL\' PASSED");
+call    0 returned 100%
+        -:   50:}
