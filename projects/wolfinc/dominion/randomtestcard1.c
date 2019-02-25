@@ -27,8 +27,8 @@ int main(){
 	int players;
 	int outpost_played;	
 
-	// Run 12 times (for 6*2 players*options)
-	for(; i < 12 ;i++)
+	// Run enough times to fully cover(for 6*2 players*options)
+	for(; i < 1000000 ;i++)
 	{
 		// Random Num of Players
 		players = rand() % 6 + 2;	//At most game will have 6 players and at 2east 1
